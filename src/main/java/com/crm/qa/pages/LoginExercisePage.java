@@ -1,10 +1,16 @@
 package com.crm.qa.pages;
 
 import com.crm.qa.base.TestBase;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.WebElement;
+import com.crm.qa.util.TestUtil;
+import org.openqa.selenium.*;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.FluentWait;
+import org.openqa.selenium.support.ui.Wait;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+import java.util.concurrent.TimeUnit;
 
 public class LoginExercisePage extends TestBase{
 
@@ -21,22 +27,23 @@ public class LoginExercisePage extends TestBase{
 	@FindBy(xpath="//button[contains(text(),'Sign Up')]")
 	WebElement signUpBtn;
 
+	Wait waitElement;
+
+	TestUtil testUtil;
+
 	//Initializing the Page Objects:
 	public LoginExercisePage(){
 		PageFactory.initElements(driver, this);
-	}
-	
-	//Actions:
-	public String validateLoginPageTitle(){
-		return driver.getTitle();
+		testUtil = new TestUtil();
 	}
 
 	public LoginExercisePage login(String login, String pwd){
+		testUtil.waitVisibility(username);
 		username.sendKeys(login);
+
+		testUtil.waitVisibility(password);
 		password.sendKeys(pwd);
 		loginButton.click();
-		    	
 		return new LoginExercisePage();
 	}
-	
 }

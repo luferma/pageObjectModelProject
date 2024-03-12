@@ -4,17 +4,19 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.util.concurrent.TimeUnit;
 
 import org.apache.commons.io.FileUtils;
 import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
 import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.ss.usermodel.WorkbookFactory;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.OutputType;
-import org.openqa.selenium.TakesScreenshot;
+import org.openqa.selenium.*;
 
 import com.crm.qa.base.TestBase;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.FluentWait;
+import org.openqa.selenium.support.ui.Wait;
 
 public class TestUtil extends TestBase {
 
@@ -97,6 +99,22 @@ public class TestUtil extends TestBase {
 //		js.executeScript("$.growl.notice({ title: 'Notice', message: 'your notice message goes here' });");
 //		js.executeScript("$.growl.warning({ title: 'Warning!', message: 'your warning message goes here' });");
 		Thread.sleep(5000);
+	}
+
+	public void waitVisibility(WebElement element){
+		Wait wait = new FluentWait<WebDriver>(driver)
+				.withTimeout(30, TimeUnit.SECONDS)
+				.pollingEvery(5, TimeUnit.SECONDS)
+				.ignoring(NoSuchElementException.class);
+		wait.until(ExpectedConditions.visibilityOf(element));
+	}
+
+	public void waitClickable(WebElement element){
+		Wait wait = new FluentWait<WebDriver>(driver)
+				.withTimeout(30, TimeUnit.SECONDS)
+				.pollingEvery(5, TimeUnit.SECONDS)
+				.ignoring(NoSuchElementException.class);
+		wait.until(ExpectedConditions.elementToBeClickable(element));
 	}
 
 }

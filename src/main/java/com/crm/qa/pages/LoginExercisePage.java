@@ -5,10 +5,7 @@ import com.crm.qa.util.TestUtil;
 import org.openqa.selenium.*;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.FluentWait;
-import org.openqa.selenium.support.ui.Wait;
-import org.openqa.selenium.support.ui.WebDriverWait;
+import org.openqa.selenium.support.ui.*;
 
 import java.util.concurrent.TimeUnit;
 
@@ -27,7 +24,17 @@ public class LoginExercisePage extends TestBase{
 	@FindBy(xpath="//button[contains(text(),'Sign Up')]")
 	WebElement signUpBtn;
 
-	Wait waitElement;
+	@FindBy(xpath="//select[contains(@class,'product_sort_container')]")
+	WebElement searchBox;
+
+	@FindBy(id="add-to-cart-sauce-labs-onesie")
+	WebElement element1;
+
+	@FindBy(id="add-to-cart-sauce-labs-bike-light")
+	WebElement element2;
+
+	@FindBy(xpath="//a[contains(@class,'shopping_cart_link')]")
+	WebElement shoppingCar;
 
 	TestUtil testUtil;
 
@@ -44,6 +51,19 @@ public class LoginExercisePage extends TestBase{
 		testUtil.waitVisibility(password);
 		password.sendKeys(pwd);
 		loginButton.click();
+
 		return new LoginExercisePage();
+	}
+
+	public void buyElements(){
+		testUtil.waitVisibility(searchBox);
+		Select objSelect =new Select(searchBox);
+		objSelect.selectByVisibleText("Price (low to high)");
+
+		testUtil.waitVisibility(element1);
+		element1.click();
+		element2.click();
+
+		shoppingCar.click();
 	}
 }

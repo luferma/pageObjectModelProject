@@ -32,6 +32,7 @@ public class HomePageLoginTest extends TestBase {
 	public void loginTest(){
 		loginExercisePage = new LoginExercisePage();
 		loginExercisePage.login(prop.getProperty("username"), prop.getProperty("password"));
+		loginExercisePage.buyElements();
 	}
 
 	@AfterMethod

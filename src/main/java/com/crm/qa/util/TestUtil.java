@@ -103,7 +103,7 @@ public class TestUtil extends TestBase {
 
 	public void waitVisibility(WebElement element){
 		Wait wait = new FluentWait<WebDriver>(driver)
-				.withTimeout(30, TimeUnit.SECONDS)
+				.withTimeout(10, TimeUnit.SECONDS)
 				.pollingEvery(5, TimeUnit.SECONDS)
 				.ignoring(NoSuchElementException.class);
 		wait.until(ExpectedConditions.visibilityOf(element));
@@ -111,7 +111,7 @@ public class TestUtil extends TestBase {
 
 	public void waitClickable(WebElement element){
 		Wait wait = new FluentWait<WebDriver>(driver)
-				.withTimeout(30, TimeUnit.SECONDS)
+				.withTimeout(10, TimeUnit.SECONDS)
 				.pollingEvery(5, TimeUnit.SECONDS)
 				.ignoring(NoSuchElementException.class);
 		wait.until(ExpectedConditions.elementToBeClickable(element));

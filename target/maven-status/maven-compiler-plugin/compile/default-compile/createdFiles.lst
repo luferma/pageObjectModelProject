@@ -3,6 +3,7 @@ com\crm\qa\pages\DealsPage.class
 com\crm\qa\pages\HomePage.class
 com\crm\qa\pages\TasksPage.class
 com\crm\qa\pages\LoginPage.class
+com\crm\qa\pages\LoginExerciseTestPage.class
 com\crm\qa\pages\LoginExercisePage.class
 com\crm\qa\base\TestBase.class
 com\crm\qa\util\TestUtil.class

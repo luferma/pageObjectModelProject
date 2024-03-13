@@ -36,6 +36,15 @@ public class LoginExercisePage extends TestBase{
 	@FindBy(xpath="//a[contains(@class,'shopping_cart_link')]")
 	WebElement shoppingCar;
 
+	@FindBy(id="checkout")
+	WebElement checkoutButton;
+
+	@FindBy(id="react-burger-menu-btn")
+	WebElement menuBurgerButton;
+
+	@FindBy(id="about_sidebar_link")
+	WebElement menuAbout;
+
 	TestUtil testUtil;
 
 	//Initializing the Page Objects:
@@ -65,5 +74,11 @@ public class LoginExercisePage extends TestBase{
 		element2.click();
 
 		shoppingCar.click();
+
+		testUtil.waitClickable(checkoutButton);
+		checkoutButton.click();
+
+		menuBurgerButton.click();
+		menuAbout.click();
 	}
 }

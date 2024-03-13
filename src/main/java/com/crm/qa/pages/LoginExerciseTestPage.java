@@ -45,6 +45,10 @@ public class LoginExerciseTestPage extends TestBase{
 		searchEnterText.sendKeys("Test");
 		searchEnterText.sendKeys(Keys.ENTER);
 
+		return new LoginExerciseTestPage();
+	}
+
+	public void listValidation(){
 		boolean flag = false;
 		for(WebElement element: resultSearchText){
 			System.out.println("Text: " + element.getText());
@@ -55,11 +59,6 @@ public class LoginExerciseTestPage extends TestBase{
 		}
 
 		Assert.assertTrue(flag);
-
-		return new LoginExerciseTestPage();
-	}
-
-	public void buyElements(){
-
+		Assert.assertEquals("True","True");
 	}
 }

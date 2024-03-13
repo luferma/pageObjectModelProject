@@ -25,9 +25,10 @@ public class HomePageExerciseTest extends TestBase {
 	}
 
 	@Test(priority=1)
-	public void loginTest(){
+	public void searchTestValidation(){
 		loginExerciseTestPage = new LoginExerciseTestPage();
 		loginExerciseTestPage.searchText();
+		loginExerciseTestPage.listValidation();
 	}
 
 	@AfterMethod

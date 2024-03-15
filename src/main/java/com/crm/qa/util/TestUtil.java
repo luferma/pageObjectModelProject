@@ -117,4 +117,12 @@ public class TestUtil extends TestBase {
 		wait.until(ExpectedConditions.elementToBeClickable(element));
 	}
 
+	public void waitPresenceOfElement(String xpath){
+		Wait wait = new FluentWait<WebDriver>(driver)
+				.withTimeout(10, TimeUnit.SECONDS)
+				.pollingEvery(5, TimeUnit.SECONDS)
+				.ignoring(NoSuchElementException.class);
+		wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(xpath)));
+	}
+
 }

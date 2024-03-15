@@ -28,6 +28,20 @@ public class LoginExerciseTestPage extends TestBase{
 
 	TestUtil testUtil;
 
+	@FindBy(xpath="test")
+	List<WebElement> validateExistElement;
+
+	//String typeValue=searchTextBox.getAttribute("type");
+    /*
+	public static final Target PANEL_WOMEN = Target.the("Panel woman")
+			.located(By.xpath("//a[contains(@class,'sf-with-ul') and contains(@title,'Women')] "));
+	public static final Target MENU_TOP = Target.the("Menu top")
+			.located(By.xpath("(//a[contains(text(),'Tops') and contains(@title,'tops')])[1]"));
+	public static final Target OPCION_SUETER = Target.the("Opcion sueter")
+			.located(By.xpath("(//ul[contains(@class,'tree dynamized')]//a[contains(text(),'T-shirts')])[1]"));
+	public static final Target BOTON_DISPONIBLE = Target.the("Boton disponible")
+			.located(By.xpath("//span[contains(@class,'available-now')]"));*/
+
 	//Initializing the Page Objects:
 	public LoginExerciseTestPage(){
 		PageFactory.initElements(driver, this);
@@ -37,6 +51,10 @@ public class LoginExerciseTestPage extends TestBase{
 	public LoginExerciseTestPage searchText(){
 		testUtil.waitVisibility(closePopUp);
 		closePopUp.click();
+
+		//testUtil.waitPresenceOfElement("test");
+		/*boolean exist = validateExistElement.size() > 0;
+		System.out.println("Exists element: " + exist);*/
 
 		testUtil.waitVisibility(searchText);
 		searchText.click();

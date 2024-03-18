@@ -42,6 +42,15 @@ public class LoginExerciseTestPage extends TestBase{
 	public static final Target BOTON_DISPONIBLE = Target.the("Boton disponible")
 			.located(By.xpath("//span[contains(@class,'available-now')]"));*/
 
+	/*
+	private int tipo;
+
+	public void setTipo(int t){
+		tipo = t;
+	}
+	 */
+
+
 	//Initializing the Page Objects:
 	public LoginExerciseTestPage(){
 		PageFactory.initElements(driver, this);

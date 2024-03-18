@@ -125,4 +125,12 @@ public class TestUtil extends TestBase {
 		wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(xpath)));
 	}
 
+	public void waitIsNotVisible(WebElement element){
+		Wait wait = new FluentWait<WebDriver>(driver)
+				.withTimeout(10, TimeUnit.SECONDS)
+				.pollingEvery(5, TimeUnit.SECONDS)
+				.ignoring(NoSuchElementException.class);
+		wait.until(ExpectedConditions.invisibilityOf(element));
+	}
+
 }

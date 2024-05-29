@@ -1,5 +1,6 @@
 package com.crm.qa.testcases;
 
+import com.crm.qa.apis.ApiTestsUsers;
 import com.crm.qa.base.TestBase;
 import com.crm.qa.pages.LoginExerciseTestAutomationPage;
 import com.crm.qa.pages.LoginExerciseTestPage;
@@ -26,6 +27,8 @@ public class HomePageExerciseAutomationTest extends TestBase {
 
 	@Test(priority=1)
 	public void searchTestValidation(){
+		ApiTestsUsers apiTestsUsers = new ApiTestsUsers();
+		apiTestsUsers.test();
 		loginExerciseTestAutomationPage = new LoginExerciseTestAutomationPage();
 		loginExerciseTestAutomationPage.searchText();
 	}

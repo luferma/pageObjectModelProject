@@ -1,0 +1,108 @@
+mvn serenity:aggregate -Dserenity.outputDirectory=D:/automation_projects/automation-example-project/target/site/serenity
+
+D:/automation_projects/automation-example-project/target/site/serenity
+
+//a[contains(@class,'sf-with-ul') and contains(@title,'Women')]
+
+xpath-------------------------------------------------------------
+Console chrome:
+$x
+//input[@id='login-button']
+//input[contains(@id,'user-name')]
+//input[contains(@data-test,'username')]
+//div[contains(@id,'loom-companion-mv3')]//section[contains(@id,'shadow-host-companion')]//div[contains(@id,'inner-shadow-companion')]
+//input[contains(@id,'user-name')]
+//input[@id='user-name']
+//input[@id='login-button']/ancestor::div[@class='form_group']
+
+//input[@id='login-button']/parent::form
+//input[@id='login-button']/following-sibling::div
+//input[@id='login-button']/preceding-sibling::div
+//input[@id='login-button']/following-sibling::div
+
+public static final Target PANEL_WOMEN = Target.the("Panel woman")
+      .located(By.xpath("//a[contains(@class,'sf-with-ul') and contains(@title,'Women')] "));
+  public static final Target MENU_TOP = Target.the("Menu top")
+      .located(By.xpath("(//a[contains(text(),'Tops') and contains(@title,'tops')])[1]"));
+  public static final Target OPCION_SUETER = Target.the("Opcion sueter")
+      .located(By.xpath("(//ul[contains(@class,'tree dynamized')]//a[contains(text(),'T-shirts')])[1]"));
+  public static final Target BOTON_DISPONIBLE = Target.the("Boton disponible")
+      .located(By.xpath("//span[contains(@class,'available-now')]"));
+
+//li//div[contains(text(),'Buscar por departamento')]/ancestor::li/following-sibling::li//div
+[contains(text(),'Electrónicos') or contains(text(),'Computadoras') or contains(text(),'Smart Home') or contains(text(),'Arte y artesanías')]
+
+Css selector-----------------------------------------------------
+Console chrome:
+$$
+ID
+input#login-button
+Class
+.submit-button
+
+button.submit-button btn_action
+
+input[data-test=username]
+input[data-test^='user']
+input[data-test$='name']
+input[data-test*='use']
+select[data-test=product_sort_container]
+option[value=lohi]
+input#user-name
+div.form_group input
+div input[type=text]
+cy.contains("a", "Upload Now").click();
+div#loom-companion-mv3 section#shadow-host-companion
+
+this.elements.userName.type("standard_user");
+this.elements.password.type("secret_sauce");
+this.elements.loginButton.click();
+
+article.display-flex div h3
+
+npx cypress open --config baseUrl=https://www.saucedemo.com/
+https://github.com/luferma/CypressPOM.git
+git remote rm https://github.com/GaveenNayanjith/Cypress-Demo-BStack_Demo.git
+git remote set-url origin https://github.com/luferma/CypressPOM.git
+_______________________________________________
+
+Gradle commands:
+
+gradle test
+gradle test aggregate
+
+class="input_error form_input"
+.form_input
+________________________________________________
+Commands project POM
+
+System.getProperty("user.dir")+ "/drivers"
+
+System.getProperty("user.dir")+ "/drivers/chromedriver.exe"
+
+System.getProperty("user.dir")+ "/src/main/java/com/crm/qa/testdata/FreeCrmTestData.xlsx"
+
+Execute------------------------------------
+mvn surefire:test -Dtest=HomePageLoginTest test
+mvn surefire:test -Dtest=HomePageExerciseAutomationTest test
+
+mvn test -Dtest=ContactsPageTest#verifyContactsPageLabel test
+
+mvn clean install -Dtest=HomePageLoginTest
+mvn install -Dtest=HomePageLoginTest
+mvn test -Dtest=HomePageLoginTest test
+
+mvn clean install surefire:test -Dtests=HomePageLoginTest test
+mvn surefire:test -Dtest=HomePageLoginTest test
+mvn surefire:test -Dtest=LoginExerciseTestAutomationPage test
+
+
+
+____________________________________________________________
+1. Requirement Analysis
+2. Test Planning
+3. Test Case Designing and Development
+4. Test Environment Setup
+5. Test Execution
+6. Test Closure
+

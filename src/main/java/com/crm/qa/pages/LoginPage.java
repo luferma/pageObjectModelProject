@@ -10,7 +10,7 @@ import com.crm.qa.base.TestBase;
 public class LoginPage extends TestBase{
 	
 	//Page Factory - OR:
-	@FindBy(name="username")
+	@FindBy(name="user-name")
 	WebElement username;
 	
 	@FindBy(name="password")

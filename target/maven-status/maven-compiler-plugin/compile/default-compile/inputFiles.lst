@@ -1,5 +1,6 @@
 D:\PageObjectModel\src\main\java\com\crm\qa\pages\LoginExercisePage.java
 D:\PageObjectModel\src\main\java\com\crm\qa\pages\DealsPage.java
+D:\PageObjectModel\src\main\java\com\crm\qa\pages\MousePage.java
 D:\PageObjectModel\src\main\java\com\qa\ExtentReportListener\ExtentReporterNG.java
 D:\PageObjectModel\src\main\java\com\crm\qa\pages\LoginPage.java
 D:\PageObjectModel\src\main\java\com\crm\qa\pages\HomePage.java
@@ -9,7 +10,11 @@ D:\PageObjectModel\src\main\java\com\crm\qa\pages\SignUpPage.java
 D:\PageObjectModel\src\main\java\com\crm\qa\util\TestUtil.java
 D:\PageObjectModel\src\main\java\com\crm\qa\pages\TasksPage.java
 D:\PageObjectModel\src\main\java\com\crm\qa\pages\LoginExerciseTestPage.java
+D:\PageObjectModel\src\main\java\com\crm\qa\pages\SharkPage.java
+D:\PageObjectModel\src\main\java\com\crm\qa\pages\SnakePage.java
+D:\PageObjectModel\src\main\java\com\crm\qa\pages\DragonPage.java
 D:\PageObjectModel\src\main\java\com\crm\qa\util\WebEventListener.java
+D:\PageObjectModel\src\main\java\com\crm\qa\pages\HorsePage.java
 D:\PageObjectModel\src\main\java\com\crm\qa\util\testExecutionTwo.java
 D:\PageObjectModel\src\main\java\com\crm\qa\util\testExecution.java
 D:\PageObjectModel\src\main\java\com\crm\qa\pages\ContactsPage.java

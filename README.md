@@ -18,3 +18,15 @@ git clone https://github.com/naveenanimation20/PageObjectModel
 cd PageObjectModel
 mvn clean test
 ```
+
+### QA Automation - Monsters Creation (Test cases created)
+```
+Were created test cases for creating the 5 monster and for delete one monster with a page object project structure
+```
+
+### To execute the QA Automation - Monsters Creation
+```
+cd PageObjectModel folder
+Open a CMD console
+Execute this maven command: mvn surefire:test -Dtest=MonsterTest test
+```

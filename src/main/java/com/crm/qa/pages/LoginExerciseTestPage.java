@@ -2,6 +2,7 @@ package com.crm.qa.pages;
 
 import com.crm.qa.base.TestBase;
 import com.crm.qa.util.TestUtil;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -71,6 +72,9 @@ public class LoginExerciseTestPage extends TestBase{
 		searchEnterText.click();
 		searchEnterText.sendKeys("Test");
 		searchEnterText.sendKeys(Keys.ENTER);
+
+		/*JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("arguments[0].scrollIntoView();", searchEnterText);*/
 
 		return new LoginExerciseTestPage();
 	}

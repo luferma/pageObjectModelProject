@@ -28,12 +28,13 @@ public class MonsterTest extends TestBase {
 	}
 
 	@Test(priority=1)
-	public void monsterTest(){
+	public void creationTest(){
 		horsePage = new HorsePage();
 		sharkPage = new SharkPage();
 		dragonPage = new DragonPage();
 		mousePage = new MousePage();
 		snakePage = new SnakePage();
+
 		horsePage.addMonster();
 		sharkPage.addMonster();
 		dragonPage.addMonster();
@@ -44,7 +45,16 @@ public class MonsterTest extends TestBase {
 	@Test(priority=2)
 	public void deleteTest(){
 		horsePage = new HorsePage();
+		sharkPage = new SharkPage();
+		dragonPage = new DragonPage();
+		mousePage = new MousePage();
+		snakePage = new SnakePage();
+
 		horsePage.deleteMonster();
+		sharkPage.deleteMonster();
+		dragonPage.deleteMonster();
+		mousePage.deleteMonster();
+		snakePage.deleteMonster();
 	}
 
 	@AfterMethod

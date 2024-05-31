@@ -32,8 +32,14 @@ public class SnakePage extends TestBase{
 	@FindBy(xpath="//button[@data-testid='btn-create-monster']")
 	WebElement createButton;
 
-	@FindBy(xpath="//p[contains(text(),'Mouse')]")
+	@FindBy(xpath="//p[text()='Snake']")
 	WebElement snakeCreated;
+
+	@FindBy(xpath="//button[@data-testid='btn-delete']")
+	WebElement deleteButton;
+
+	@FindBy(xpath="//p[text()='There are no monsters']")
+	WebElement monsterDeletedMessage;
 
 	/*@FindBy(xpath="//article[contains(@class,'display-flex')]//div//h3")
 	List<WebElement> resultSearchText;*/
@@ -50,17 +56,41 @@ public class SnakePage extends TestBase{
 		testUtil.waitVisibility(snakeImage);
 		snakeImage.click();
 
-		nameInput.sendKeys("Mouse");
+		nameInput.sendKeys("Snake");
 		hPInput.sendKeys(String.valueOf(1));
 		attackInput.sendKeys(String.valueOf(1));
 		defenseInput.sendKeys(String.valueOf(1));
 		speedInput.sendKeys(String.valueOf(1));
 
 		createButton.click();
+
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript("arguments[0].scrollIntoView();", snakeCreated);
 		testUtil.waitVisibility(snakeCreated);
 		Assert.assertTrue(snakeCreated.isDisplayed());
+		return new SnakePage();
+	}
+
+	public SnakePage deleteMonster(){
+		testUtil.waitVisibility(snakeImage);
+		snakeImage.click();
+
+		nameInput.sendKeys("Snake");
+		hPInput.sendKeys(String.valueOf(1));
+		attackInput.sendKeys(String.valueOf(1));
+		defenseInput.sendKeys(String.valueOf(1));
+		speedInput.sendKeys(String.valueOf(1));
+
+		createButton.click();
+
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("arguments[0].scrollIntoView();", snakeCreated);
+		testUtil.waitVisibility(snakeCreated);
+		Assert.assertTrue(snakeCreated.isDisplayed());
+
+		deleteButton.click();
+		Assert.assertTrue(monsterDeletedMessage.isDisplayed());
+
 		return new SnakePage();
 	}
 }

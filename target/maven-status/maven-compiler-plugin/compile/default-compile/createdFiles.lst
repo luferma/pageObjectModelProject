@@ -8,8 +8,6 @@ com\crm\qa\pages\LoginExercisePage.class
 com\crm\qa\base\TestBase.class
 com\crm\qa\util\TestUtil.class
 com\crm\qa\pages\SignUpPage.class
-com\crm\qa\pages\DragonPage.class
-com\crm\qa\pages\MousePage.class
 com\crm\qa\util\WebEventListener.class
 com\qa\ExtentReportListener\ExtentReporterNG.class
 com\crm\qa\pages\LoginExerciseTestAutomationPage.class

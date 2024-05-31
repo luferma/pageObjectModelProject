@@ -32,8 +32,14 @@ public class MousePage extends TestBase{
 	@FindBy(xpath="//button[@data-testid='btn-create-monster']")
 	WebElement createButton;
 
-	@FindBy(xpath="//p[contains(text(),'Mouse')]")
+	@FindBy(xpath="//p[text()='Mouse']")
 	WebElement mouseCreated;
+
+	@FindBy(xpath="//button[@data-testid='btn-delete']")
+	WebElement deleteButton;
+
+	@FindBy(xpath="//p[text()='There are no monsters']")
+	WebElement monsterDeletedMessage;
 
 	/*@FindBy(xpath="//article[contains(@class,'display-flex')]//div//h3")
 	List<WebElement> resultSearchText;*/
@@ -57,10 +63,34 @@ public class MousePage extends TestBase{
 		speedInput.sendKeys(String.valueOf(1));
 
 		createButton.click();
+
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript("arguments[0].scrollIntoView();", mouseCreated);
 		testUtil.waitVisibility(mouseCreated);
 		Assert.assertTrue(mouseCreated.isDisplayed());
+		return new MousePage();
+	}
+
+	public MousePage deleteMonster(){
+		testUtil.waitVisibility(mouseImage);
+		mouseImage.click();
+
+		nameInput.sendKeys("Mouse");
+		hPInput.sendKeys(String.valueOf(1));
+		attackInput.sendKeys(String.valueOf(1));
+		defenseInput.sendKeys(String.valueOf(1));
+		speedInput.sendKeys(String.valueOf(1));
+
+		createButton.click();
+
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("arguments[0].scrollIntoView();", mouseCreated);
+		testUtil.waitVisibility(mouseCreated);
+		Assert.assertTrue(mouseCreated.isDisplayed());
+
+		deleteButton.click();
+		Assert.assertTrue(monsterDeletedMessage.isDisplayed());
+
 		return new MousePage();
 	}
 }

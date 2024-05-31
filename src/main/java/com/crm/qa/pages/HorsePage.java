@@ -35,18 +35,14 @@ public class HorsePage extends TestBase{
 	@FindBy(xpath="//button[@data-testid='btn-create-monster']")
 	WebElement createButton;
 
-	@FindBy(xpath="//p[contains(text(),'Horse')]")
+	@FindBy(xpath="//p[text()='Horse']")
 	WebElement horseCreated;
 
 	@FindBy(xpath="//button[@data-testid='btn-delete']")
-	WebElement deleteMonster;
+	WebElement deleteButton;
 
-	@FindBy(xpath="//p[contains(text(),'There are no monsters')]")
-	WebElement noMonsters;
-
-
-	/*@FindBy(xpath="//article[contains(@class,'display-flex')]//div//h3")
-	List<WebElement> resultSearchText;*/
+	@FindBy(xpath="//p[text()='There are no monsters']")
+	WebElement monsterDeletedMessage;
 
 	TestUtil testUtil;
 
@@ -67,6 +63,7 @@ public class HorsePage extends TestBase{
 		speedInput.sendKeys(String.valueOf(1));
 
 		createButton.click();
+
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript("arguments[0].scrollIntoView();", horseCreated);
 		testUtil.waitVisibility(horseCreated);
@@ -85,15 +82,15 @@ public class HorsePage extends TestBase{
 		speedInput.sendKeys(String.valueOf(1));
 
 		createButton.click();
+
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript("arguments[0].scrollIntoView();", horseCreated);
 		testUtil.waitVisibility(horseCreated);
 		Assert.assertTrue(horseCreated.isDisplayed());
 
-		deleteMonster.click();
-		Assert.assertTrue(noMonsters.isDisplayed());
+		deleteButton.click();
+		Assert.assertTrue(monsterDeletedMessage.isDisplayed());
 
 		return new HorsePage();
 	}
-
 }
